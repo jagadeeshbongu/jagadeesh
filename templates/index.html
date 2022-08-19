@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Price Estimation of Used Cars</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="../static/bootstrap.min.css" />
+
+	<!-- Custom stlylesheet -->
+	<link rel="stylesheet" type="text/css" href="../static/style.css">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+</head>
+
+
+
+<body>
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						
+					</div>
+					<div class="col-md-7 col-md-offset-1">
+						<div class="booking-form">
+							<form action="{{ url_for('predict')}}"method="POST">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">MILEAGE</span>
+											<input class="form-control" name="MILEAGE" type="number" placeholder="Enter Your Car Mileage">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">KILOMETERS_DRIVEN</span>
+											<input class="form-control" name="KILOMETERS_DRIVEN" type="number" placeholder="Enter Your Car Kilometers_Driven">
+										</div>
+									</div>
+								</div>
+								
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">ENGINE</span>
+											<input class="form-control" name="ENGINE" type="number" placeholder="Enter Your Car Engine CC">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">POWER</span>
+											<input class="form-control" name="POWER" type="number" placeholder="Enter Your Car Power">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">FUEL_TYPE</span>
+											<select name="FUEL_TYPE" class="form-control">
+												<option>PETROL</option>
+												<option>DIESEL</option>
+												<option>CNG</option>
+												<option>LPG</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">OWNER_TYPE</span>
+											<select name="OWNER_TYPE" class="form-control">
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>									
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">TRANSMISSION</span>
+											<select name="TRANSMISSION" class="form-control">
+												<option>MANUAL</option>
+												<option>AUTOMANTIC</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">SEATS</span>
+											<select name="SEATS" class="form-control">
+												<option>2</option>
+												<option>4</option>
+												<option>5</option>
+												<option>6</option>
+												<option>7</option>
+                                                <option>8</option>
+												<option>9</option>
+												<option>10</option>												
+										 </select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>									
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">YEAR</span>
+											<input class="form-control" name="YEAR" type="number" placeholder="Enter Your Car Year">
+										</div>
+									</div>									
+								</div>								
+								<div class="form-btn">
+									<button class="submit-btn">SUBMIT</button>
+								</div>
+								<h3>{{Text}}</h3>
+								<h4>{{Estimation}}</h4>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
